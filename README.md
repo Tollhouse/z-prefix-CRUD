@@ -1,8 +1,8 @@
-### Z-PREFIX-CRUD
+# Z-PREFIX-CRUD
 
 ## Installation
 
-# Backend
+## Backend
 
 Clown down the repository
 
@@ -59,7 +59,7 @@ You should get a response back that looks like
 Express server listening on 3000
 ```
 
-# Frontend
+## Frontend
 
 Navigate back to the main directory with
 ```
