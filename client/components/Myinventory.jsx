@@ -1,6 +1,8 @@
 import { useState, useEffect, useContext } from 'react'
 
 function Myinventory(){
+    const [items, setItems] = useState([]);
+    const [personalItems, setPersonalItems] = useState([])
 
     useEffect(() => {
         fetch('http://localhost:3000/item')

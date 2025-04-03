@@ -1,10 +1,13 @@
 import { useState, useEffect, useContext } from 'react'
 
 function Newuser(){
-    const [userID, setUserID] = useState('');
+    const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
 
-    const loginHandler = () => {
+
+    const submitHandler = () => {
             console.log(userID)
             console.log(password)
         }
@@ -24,18 +27,38 @@ function Newuser(){
                 placeholder="Username"
                 value={userID}
                 onChange={(currentvalue) => setUserID(currentvalue.target.value)}/>
+            </div>
 
+            <div>
                 <input 
                 id="password"
-                type="password"
+                type="text"
                 placeholder="Password"
                 value={password}
                 onChange={(currentvalue) => setPassword(currentvalue.target.value)}/>
-                
-                <button onClick={loginHandler}>Log In</button>
             </div>
+            
+
             <div>
-                <button onClick={newUser}>New User?</button>
+                <input 
+                id="First Name"
+                type="text"
+                placeholder="FirstName"
+                value={password}
+                onChange={(currentvalue) => setFirstName(currentvalue.target.value)}/>
+            </div>
+
+            <div>
+                <input 
+                id="Last Name"
+                type="text"
+                placeholder="LastName"
+                value={password}
+                onChange={(currentvalue) => setLastName(currentvalue.target.value)}/>
+            </div>
+
+            <div>
+                <button onClick={submitHandler}>Create Account</button>
             </div>
         </>
     )

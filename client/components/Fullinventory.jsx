@@ -21,7 +21,7 @@ function Fullinventory(){
       <div className = "inventorylist">
         {items.map(item => <div>{item.itemname} Quantity:{item.quantity}</div>)}
       </div>
-        </>
+      </>
     )
 
 }
