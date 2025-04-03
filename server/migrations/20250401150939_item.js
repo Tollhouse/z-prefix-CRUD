@@ -7,7 +7,7 @@ exports.up = async function(knex) {
     table.increments('id')
     table.integer('userid', 100)
     table.string('itemname', 100)
-    table.string('description', 100)
+    table.string('description', 1000)
     table.integer('quantity')
     })
 };

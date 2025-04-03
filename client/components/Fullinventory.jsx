@@ -25,7 +25,15 @@ function Fullinventory(){
     const back = () => {
       console.log("Redirecting to inventory page")
       navigate(`/`);
-  };
+    };
+
+    const shortDesc = (desc) => {
+      if(desc.length > 100){
+        return desc.slice(0,100) + '...'
+      } else{
+        return desc
+      }
+    }
 
     return (
       <>
@@ -33,7 +41,7 @@ function Fullinventory(){
           Current Inventory List
         </div>
         <div className = "inventorylist">
-          {items.map(item => <div>{item.itemname} Quantity:{item.quantity}
+          {items.map(item => <div>{item.itemname} Quantity:{item.quantity} Description: {shortDesc(item.description)}
                               <button onClick={() => viewItem(item.id)}>View</button>
                               </div>)}
         </div>
