@@ -7,9 +7,19 @@ function Login(){
 
     const navigate = useNavigate();
 
-    const loginHandler = () => {
+    const loginHandler = async () => {
             console.log(userID)
             console.log(password)
+            const response = await fetch(`http://localhost:3000/users`)
+            let json = await response.json()
+            json = json.filter(user => user.password === password)
+            if(json.length > 0){
+                console.log('Found Account')
+                json = json[0]
+                navigate(`/Myinventory/${json.id}`)
+            } else {
+                alert("User not found please check information or create an account")
+            }
     };
 
     const newUser = () => {

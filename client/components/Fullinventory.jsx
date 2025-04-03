@@ -23,7 +23,7 @@ function Fullinventory(){
     };
 
     const back = () => {
-      console.log("Redirecting to inventory page")
+      console.log("Redirecting to login page")
       navigate(`/`);
     };
 

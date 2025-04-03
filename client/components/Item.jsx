@@ -23,9 +23,9 @@ function Item(){
         .then((data) =>{
             setUserName(data[0])
         })
-      }, []);
+    }, []);
 
-      const back = () => {
+    const back = () => {
         console.log("Redirecting to inventory page")
         navigate(`/Fullinventory`);
     };
