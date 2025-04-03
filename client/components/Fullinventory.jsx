@@ -35,17 +35,31 @@ function Fullinventory(){
       }
     }
 
+    const personalInventory = () => {
+      const storedId = localStorage.getItem('myid');
+      console.log(storedId)
+      if(typeof storedId === 'undefined'){
+        alert("Please login to view your inventory.")
+      } else {
+        navigate(`/Myinventory/${storedId}`)
+      }
+    }
+
     return (
       <>
         <div>
           Current Inventory List
         </div>
         <div className = "inventorylist">
-          {items.map(item => <div>{item.itemname} Quantity:{item.quantity} Description: {shortDesc(item.description)}
+          {items.map(item => <div>
+                                Item Name: {item.itemname} 
+                                Quantity: {item.quantity} 
+                                Description: {shortDesc(item.description)}
                               <button onClick={() => viewItem(item.id)}>View</button>
                               </div>)}
         </div>
         <button onClick={back}>Login</button>
+        <button onClick={personalInventory}>My Inventory</button>
       </>
     )
 

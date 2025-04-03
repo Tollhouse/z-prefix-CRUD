@@ -6,6 +6,7 @@ import Myinventory from '../components/Myinventory'
 import Fullinventory from '../components/Fullinventory'
 import Newuser from '../components/Newuser'
 import Createitem from '../components/Createitem'
+import Userlist from '../components/Userlist'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route path='/Newuser' element={<Newuser />} />
           <Route path='/Item/:id' element={<Item />} />
           <Route path='/Createitem/:id' element={<Createitem />} />
+          <Route path='/Userlist' element={<Userlist />} />
       </Routes>
     </>
   )

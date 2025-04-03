@@ -16,6 +16,7 @@ function Login(){
             if(json.length > 0){
                 console.log('Found Account')
                 json = json[0]
+                localStorage.setItem('myid',json.id)
                 navigate(`/Myinventory/${json.id}`)
             } else {
                 alert("User not found please check information or create an account")

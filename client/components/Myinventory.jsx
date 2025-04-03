@@ -39,6 +39,11 @@ function Myinventory(){
         }
       }
 
+      const viewItem = (id) => {
+        console.log("Redirecting to item page")
+        navigate(`/Item/${id}`);
+      };
+
       const fullInventory = () =>{
         console.log('Redirecting to full inventory...');
         navigate('/Fullinventory');
@@ -49,8 +54,12 @@ function Myinventory(){
         navigate(`/Createitem/${id}`);
       }
 
+      const editHandler = async (itemid) => {
+        console.log(`Editing ${itemid}...`);
+      }
+
     return (
-        <>
+    <>
       <div>
         Personal Inventory Management
       </div>
@@ -67,10 +76,12 @@ function Myinventory(){
             {item.itemname} <br/>
             Quantity:{item.quantity} <br/>
             Description: {shortDesc(item.description)} <br/>
+            <button onClick={() => viewItem(item.id)}>View</button>
             <button onClick={() => deleteHandler(item.id)}>Delete</button>
+            <button onClick={() => editHandler(item.id)}>Edit</button>
             </div>)}
       </div>
-        </>
+    </>
     )
 
 }

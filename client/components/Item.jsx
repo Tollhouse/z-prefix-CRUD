@@ -25,9 +25,19 @@ function Item(){
         })
     }, []);
 
-    const back = () => {
+    const fullInventory = () => {
         console.log("Redirecting to inventory page")
         navigate(`/Fullinventory`);
+    };
+
+    const myInventory = () => {
+        const storedId = localStorage.getItem('myid');
+        console.log(storedId)
+        if(typeof storedId === 'undefined'){
+          alert("Please login to view your inventory.")
+        } else {
+          navigate(`/Myinventory/${storedId}`)
+        }
     };
 
     return(
@@ -43,7 +53,8 @@ function Item(){
             Description: {item.description}
             </div>
         </div>
-        <button onClick={back}>Back</button>
+        <button onClick={fullInventory}>Full Inventory</button>
+        <button onClick={myInventory}>My Inventory</button>
     </>
     )
 }

@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Newuser(){
     const [userName, setUserName] = useState('');
@@ -6,12 +7,29 @@ function Newuser(){
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
 
+    const navigate = useNavigate();
 
-    const submitHandler = () => {
-            console.log(userName)
-            console.log(password)
-            console.log(firstName)
-            console.log(lastName)
+    const submitHandler = async () => {
+            const data = {
+                firstname: String(firstName),
+                lastname: String(lastName),
+                username: String(userName),
+                password: String(password)
+            };
+            console.log(data)
+            const response = await fetch('http://localhost:3000/users', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            if(response.ok){
+                console.log(response)
+                navigate('/');
+            }else{
+                console.log('Failed')
+            }
     }
 
     const newUser = () => {
