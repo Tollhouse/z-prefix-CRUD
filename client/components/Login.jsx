@@ -1,8 +1,11 @@
 import { useState, useEffect, useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Login(){
     const [userID, setUserID] = useState('');
     const [password, setPassword] = useState('');
+
+    const navigate = useNavigate();
 
     const loginHandler = () => {
             console.log(userID)
@@ -11,10 +14,12 @@ function Login(){
 
     const newUser = () => {
         console.log('Redirecting to registration...');
+        navigate('/Newuser')
     };
 
     const noUserPage = () =>{
         console.log('Redirecting to current inventory...');
+        navigate('/Fullinventory');
     }
 
 

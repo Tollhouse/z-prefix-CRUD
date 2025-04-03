@@ -20,6 +20,16 @@ server.get('/users', async (req, res) => {
     }
 });
 
+server.get('/users/:id', async (req, res) => {
+    const id = parseInt(req.params.id)
+    try{
+        const data = await knex('users').select('*').where('id',id);
+        res.status(200).json(data);
+    } catch(error){
+        res.status(500).json({message: "Error retrieving data.", error})
+    }
+});
+
 server.post('/users', async (req, res) =>{
     const {input} = req.body;
     try{

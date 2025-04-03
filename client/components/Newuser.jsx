@@ -8,10 +8,11 @@ function Newuser(){
 
 
     const submitHandler = () => {
-            console.log(userID)
+            console.log(userName)
             console.log(password)
-        }
-    };
+            console.log(firstName)
+            console.log(lastName)
+    }
 
     const newUser = () => {
         console.log('Redirecting to user reg...');
@@ -19,14 +20,14 @@ function Newuser(){
 
     return (
         <>
-            <h1>Login</h1>
+            <h1>Sign Up</h1>
             <div>
                 <input 
                 id="userid"
                 type="text"
                 placeholder="Username"
-                value={userID}
-                onChange={(currentvalue) => setUserID(currentvalue.target.value)}/>
+                value={userName}
+                onChange={(currentvalue) => setUserName(currentvalue.target.value)}/>
             </div>
 
             <div>
@@ -44,7 +45,7 @@ function Newuser(){
                 id="First Name"
                 type="text"
                 placeholder="FirstName"
-                value={password}
+                value={firstName}
                 onChange={(currentvalue) => setFirstName(currentvalue.target.value)}/>
             </div>
 
@@ -53,7 +54,7 @@ function Newuser(){
                 id="Last Name"
                 type="text"
                 placeholder="LastName"
-                value={password}
+                value={lastName}
                 onChange={(currentvalue) => setLastName(currentvalue.target.value)}/>
             </div>
 
@@ -63,7 +64,7 @@ function Newuser(){
         </>
     )
 
-
+}
 
 
 export default Newuser

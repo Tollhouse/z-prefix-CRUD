@@ -1,14 +1,20 @@
-import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Routes, Route, Link, useNavigate } from 'react-router-dom'
 import './App.css'
 import Login from '../components/Login'
+import Myinventory from '../components/Myinventory'
+import Fullinventory from '../components/Fullinventory'
+import Newuser from '../components/Newuser'
 
 function App() {
 
   return (
     <>
-      <Login/>
+      <Routes>
+          <Route path='/' element={<Login />} />
+          <Route path='/Fullinventory' element={<Fullinventory />} />
+          <Route path='/Myinventory/:id' element={<Myinventory />} />
+          <Route path='/Newuser' element={<Newuser />} />
+      </Routes>
     </>
   )
 }
