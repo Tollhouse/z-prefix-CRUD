@@ -42,9 +42,19 @@ server.post('/users', async (req, res) =>{
     }
 });
 
-// server.patch('/users:id', async (req, res) =>{
-
-// });
+server.patch('/users/:id', async (req, res) =>{
+    const id = parseInt(req.params.id)
+    const { firstname, lastname, username, password } = req.body;
+    try{
+        await knex('users')
+        .where('id',id)
+        .update({ firstname, lastname, username, password })
+        res.status(200).json({ message: "User Edited." });
+    } catch(error){
+        console.error('Error inserting data:',error)
+        res.status(500).json({message: "Internal Server Error Inserting Data.", error})
+    }
+});
 
 server.delete('/users', async (req, res) => {
     const {id} = req.body.id;
@@ -90,9 +100,19 @@ server.post('/item', async (req, res) =>{
     }
 });
 
-// server.patch('/item', async (req, res) =>{
-
-// });
+ server.patch('/item/:id', async (req, res) =>{
+    const id = parseInt(req.params.id)
+    const { userid, itemname, description, quantity } = req.body;
+    try{
+        await knex('item')
+        .where('id',id)
+        .update({ userid, itemname, description, quantity })
+        res.status(200).json({ message: "Item Edited." });
+    } catch(error){
+        console.error('Error inserting data:',error)
+        res.status(500).json({message: "Internal Server Error Inserting Data.", error})
+    }
+ });
 
 server.delete('/item/:id', async (req, res) => {
     const id  = parseInt(req.params.id)

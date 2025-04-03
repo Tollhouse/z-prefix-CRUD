@@ -7,6 +7,7 @@ import Fullinventory from '../components/Fullinventory'
 import Newuser from '../components/Newuser'
 import Createitem from '../components/Createitem'
 import Userlist from '../components/Userlist'
+import Edituser from '../components/Edituser'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Route path='/Item/:id' element={<Item />} />
           <Route path='/Createitem/:id' element={<Createitem />} />
           <Route path='/Userlist' element={<Userlist />} />
+          <Route path='/Edituser/:id' element={<Edituser />} />
       </Routes>
     </>
   )

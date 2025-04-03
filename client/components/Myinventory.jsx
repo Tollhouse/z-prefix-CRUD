@@ -58,6 +58,11 @@ function Myinventory(){
         console.log(`Editing ${itemid}...`);
       }
 
+      const editUser= () => {
+        console.log('Redirecting to User edit page...');
+        navigate(`/Edituser/${id}`);
+      }
+
     return (
     <>
       <div>
@@ -66,6 +71,7 @@ function Myinventory(){
       <div>
       <button onClick={createItem}>Create New Item</button>
       <button onClick={fullInventory}>Full Inventory</button>
+      <button onClick={editUser}>Edit Profile</button>
       </div>
       <div>
         Your item list
