@@ -20,7 +20,7 @@ function Login(){
     const noUserPage = () =>{
         console.log('Redirecting to current inventory...');
         navigate('/Fullinventory');
-    }
+    };
 
 
     return (

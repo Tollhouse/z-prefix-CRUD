@@ -65,6 +65,17 @@ server.get('/item', async (req, res) => {
 
 });
 
+server.get('/item/:id', async (req, res) => {
+    const id  = parseInt(req.params.id)
+    try{
+        const data = await knex('item').select('*').where('id',id);
+        res.status(200).json(data);
+    } catch(error){
+        res.status(500).json({message: "Error retrieving data.", error})
+    }
+
+});
+
 // server.post('/item', async (req, res) =>{
 //     knex('item')
 //     .insert()
