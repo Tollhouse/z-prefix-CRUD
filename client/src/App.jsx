@@ -8,6 +8,7 @@ import Newuser from '../components/Newuser'
 import Createitem from '../components/Createitem'
 import Userlist from '../components/Userlist'
 import Edituser from '../components/Edituser'
+import Edititem from '../components/Edititem'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <Route path='/Createitem/:id' element={<Createitem />} />
           <Route path='/Userlist' element={<Userlist />} />
           <Route path='/Edituser/:id' element={<Edituser />} />
+          <Route path='/Edititem/:id' element={<Edititem />} />
       </Routes>
     </>
   )

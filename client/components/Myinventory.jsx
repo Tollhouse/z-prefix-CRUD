@@ -56,6 +56,7 @@ function Myinventory(){
 
       const editHandler = async (itemid) => {
         console.log(`Editing ${itemid}...`);
+        navigate(`/Edititem/${itemid}`);
       }
 
       const editUser= () => {
