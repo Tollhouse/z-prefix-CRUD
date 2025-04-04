@@ -4,7 +4,7 @@
 
 ### Backend
 
-Clown down the repository
+Clone down the repository
 
 ```
 git clone git@github.com:Tollhouse/z-prefix-CRUD.git
